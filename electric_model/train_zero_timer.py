@@ -59,9 +59,9 @@ for timer in [1, 3, 6, 24, 48]:
     num_epochs = 1500
 
     # 학습 정보 저장 경로
-    log_path = f'log/train_zero_{timer}th_log_data.csv'
-    save_model_path = f'model_save//zeroornotmodel{timer}th_time.pth'
-    save_tmp_path = f'model_save//zeroornotmodel{timer}th_time_epoch%d.pth'
+    log_path = f'log/train_zeroCNN_{timer}th_log_data.csv'
+    save_model_path = f'model_save//zeroornotmodelCNN{timer}th_time.pth'
+    save_tmp_path = f'model_save//zeroornotmodelCNN{timer}th_time_epoch%d.pth'
     # 데이터 셋 구성
     transform = DataTransform(0,1)
     train_dataset = []

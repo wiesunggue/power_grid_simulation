@@ -38,7 +38,6 @@ minimax_dataset = [] # 정규화된 데이터 셋
 # 데이터 읽기
 for path in file_path:
     dataset.append(pd.read_csv(path,index_col=0))
-
 # 24시의 데이터만 추출하기
 for temp_data in dataset:
     data24.append(temp_data.loc[[(k + 1) * 24 for k in range(365)]])
@@ -52,15 +51,15 @@ for i in range(len(file_path)):
     minimax_dataset.append(tmp)
 
 # 학습하기
-for timer in [24, 48]:
+for timer in [0,1,3,6,24,48]:
     # 학습 파라메터
     batch_size = 32
     num_epochs = 300
 
     # 학습 정보 저장 경로
-    log_path = f'log//train_value_{timer}th_log_data.csv'
-    save_model_path = f'modeL_save//regression{timer}th_time.pth'
-    save_tmp_path = f'modeL_save//regression{timer}th_time_epoch%d.pth'
+    log_path = f'log//train_valueCNN_{timer}th_log_data.csv'
+    save_model_path = f'modeL_save//regressionCNN{timer}th_time.pth'
+    save_tmp_path = f'modeL_save//regressionCNN{timer}th_time_epoch%d.pth'
 
     # 데이터 셋 구성
     transform = DataTransform(0,1)
@@ -69,12 +68,12 @@ for timer in [24, 48]:
     val_dataset = []
     val_dataloader = []
     for idx, var_dataset in enumerate(minimax_dataset):
-        ds = MakevarDataSet(var_dataset, timer,transform, False, 'train')
+        ds = MakevarDataSet2(var_dataset, timer,transform, False, 'train')
         if idx==(len(minimax_dataset)-1):
             val_dataset.append(Make24DataSet(ds,None,'val'))
         else:
             train_dataset.append(Make24DataSet(ds,transform,'train'))
-
+    print('*****',ds[5])
     # 데이터 로더 구성하기 - 학습
     for _, train in enumerate(train_dataset):
         train_dataloader.append(data.DataLoader(
@@ -89,7 +88,7 @@ for timer in [24, 48]:
     dataloaders_dict =  {f"train{idx}":loader for idx,loader in enumerate(train_dataloader)} | {f"val{idx}":loader for idx,loader in enumerate(val_dataloader)}
 
     # 학습 모델 클래스 정의(값 예측용)
-    model = RegressionNetX((timer+24)*5,'train')
+    model = RegressionCNNX((timer+24)*5,'train')
 
     # 최적화 탐색자 정의
     optimizer = optim.Adam(model.parameters(),lr=1e-3)
