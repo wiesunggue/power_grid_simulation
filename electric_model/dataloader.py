@@ -131,3 +131,16 @@ class Make24DataSet(data.Dataset):
     def __getitem__(self,index):
         return self.ds[(index+1)*24]
 
+class Make24DataSet2(data.Dataset):
+    '''24시의 데이터를 가져올 수 있도록 하는 Dataset'''
+    def __init__(self,ds,transform=None, phase='train'):
+        self.ds = ds
+        self.transform = transform
+        self.phase = phase
+
+    def __len__(self):
+        return len(self.ds)//24-3 # 첫날과 마지막 2일 제거
+
+    def __getitem__(self,index):
+        return self.ds[(index+1)*24]
+

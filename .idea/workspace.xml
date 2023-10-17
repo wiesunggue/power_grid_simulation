@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="72a16995-793d-42d9-a2e6-f680525e511d" name="Changes" comment="power grid system ESS simulation" />
+    <list default="true" id="72a16995-793d-42d9-a2e6-f680525e511d" name="Changes" comment="power grid system ESS simulation">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/power_grid.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/power_grid.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/electric_model/MultimodalLoad_timer.py" beforeDir="false" afterPath="$PROJECT_DIR$/electric_model/MultimodalLoad_timer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/electric_model/dataloader.py" beforeDir="false" afterPath="$PROJECT_DIR$/electric_model/dataloader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/electric_model/datanet.py" beforeDir="false" afterPath="$PROJECT_DIR$/electric_model/datanet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/electric_model/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/electric_model/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/electric_model/train_timer.py" beforeDir="false" afterPath="$PROJECT_DIR$/electric_model/train_timer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/electric_model/train_zero_timer.py" beforeDir="false" afterPath="$PROJECT_DIR$/electric_model/train_zero_timer.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,7 +35,9 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main"
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "E:/python_study/Scripts/python.exe",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -41,7 +56,21 @@
       <option name="project" value="LOCAL" />
       <updated>1697179265972</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="power grid system ESS simulation">
+      <created>1697502849009</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1697502849009</updated>
+    </task>
+    <task id="LOCAL-00003" summary="power grid system ESS simulation">
+      <created>1697509187958</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1697509187958</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

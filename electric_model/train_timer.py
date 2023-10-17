@@ -73,7 +73,6 @@ for timer in [0,1,3,6,24,48]:
             val_dataset.append(Make24DataSet(ds,None,'val'))
         else:
             train_dataset.append(Make24DataSet(ds,transform,'train'))
-    print('*****',ds[5])
     # 데이터 로더 구성하기 - 학습
     for _, train in enumerate(train_dataset):
         train_dataloader.append(data.DataLoader(

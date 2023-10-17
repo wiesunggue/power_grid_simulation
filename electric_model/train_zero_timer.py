@@ -53,10 +53,10 @@ for i in range(len(file_path)):
     minimax_dataset.append(tmp)
 
 # 학습하기
-for timer in [1, 3, 6, 24, 48]:
+for timer in [0, 1, 3, 6, 24, 48]:
     # 학습 파라메터
     batch_size = 32
-    num_epochs = 1500
+    num_epochs = 500
 
     # 학습 정보 저장 경로
     log_path = f'log/train_zeroCNN_{timer}th_log_data.csv'
@@ -69,7 +69,7 @@ for timer in [1, 3, 6, 24, 48]:
     val_dataset = []
     val_dataloader = []
     for idx, var_dataset in enumerate(minimax_dataset):
-        ds = MakevarDataSet(var_dataset, timer,transform, True, 'train')
+        ds = MakevarDataSet2(var_dataset, timer,transform, True, 'train')
         if idx==(len(minimax_dataset)-1):
             val_dataset.append(Make24DataSet(ds,None,'val'))
         else:
@@ -88,7 +88,7 @@ for timer in [1, 3, 6, 24, 48]:
     dataloaders_dict = {f"train{idx}": loader for idx, loader in enumerate(train_dataloader)} | {f"val{idx}": loader for idx, loader in enumerate(val_dataloader)}
 
     # 학습 모델 클래스 정의
-    model = ZeroOrNotX((timer+24)*5,'train')
+    model = ZeroOrNotCNNX((timer+24)*5,'train')
 
     # 최적화 탐색자 정의
     optimizer = optim.Adam(model.parameters(),lr=1e-2)

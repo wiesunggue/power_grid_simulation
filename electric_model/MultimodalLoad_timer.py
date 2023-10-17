@@ -66,20 +66,19 @@ for timer in [0,1,3,6,24,48]: # 수정해야 함 체크
     train_dataset = []
     train_dataloader = []
     for idx, var_dataset in enumerate(minimax_dataset):
-        ds = MakevarDataSet(var_dataset, timer, transform, False, 'train')
+        ds = MakevarDataSet2(var_dataset, timer, transform, False, 'train')
         if idx == len(minimax_dataset)-1:
             val_dataset = Make24DataSet(ds, None, 'val')
         else:
             train_dataset.append(Make24DataSet(ds, transform, 'train'))
+    save_path1 = f'model_save//zeroornotmodelCNN{timer}th_time_epoch100.pth' ## 수정해야 함 체크
+    save_path2 = f'modeL_save//regressionCNN2{timer}th_time_epoch100.pth'
 
-    save_path1 = f'model_save\zeroornotmodel{timer}th_time_epoch1000.pth' ## 수정해야 함 체크
-    save_path2 = f'modeL_save//regression{timer}th_time.pth'
-
-    model1 = ZeroOrNotX((timer+24)*5,'phase') # 수정해야 함 체크
+    model1 = ZeroOrNotCNNX((timer+24)*5,'phase') # 수정해야 함 체크
     model1.load_state_dict(torch.load(save_path1))
     model1.eval()
 
-    model2 = RegressionNetX((timer+24)*5,'phase')
+    model2 = RegressionCNNX((timer+24)*5,'phase')
     model2.load_state_dict(torch.load(save_path2))
     model2.eval()
 
